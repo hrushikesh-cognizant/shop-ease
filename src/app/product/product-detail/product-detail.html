@@ -1,0 +1,21 @@
+<p>product-detail works!</p>
+<main>
+    <a>Back to collection</a>
+    <div *ngIf="product$ | async as product; else state">
+        <img [src]="product.image" [alt]="product.name"/>
+        <div>
+            <p>{{product.category}} / {{product.rating}}</p>
+            <h1>{{product.name}}</h1>
+            <p>{{product.description}}</p>
+            <strong>{{product.price | currency : 'INR'}}</strong>
+            <p>{{product.quantity ? product.quantity +' available today' : 'Currently out of stock'}}</p>
+            <button (click)="addToCart(product)">Add to cart</button>
+        </div>
+    </div>
+
+    <ng-template #state>
+        <div>
+            {{error ? 'We could not find that item.' : 'Loading produts...'}}
+        </div>
+    </ng-template>
+</main>
