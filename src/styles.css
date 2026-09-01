@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background: #f7f5f0;
+    color: #26332c;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+button{
+    border-radius: 0 !important;
+}
+
+.serif {
+    font-family: Georgia, serif;
+}
+
+.container-wide{
+    max-width: 1240px;
+    margin: auto;
+    padding: 0 24px;
+}

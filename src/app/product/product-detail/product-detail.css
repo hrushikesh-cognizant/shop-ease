@@ -1,0 +1,52 @@
+.page{
+    padding-top: 40px;
+    padding-bottom: 100px;
+}
+
+.back{
+    color: #526057;
+    text-decoration: none;
+}
+
+.detail{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 70px;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.detail img {
+    width: 100%;
+    aspect-ratio: 1.1;
+    object-fit: cover;
+}
+
+
+.detail h1 {
+    font: clamp(3rem, 6vw, 5.6rem)/0.95 Georgia, serif;
+    margin: 12px 0 25px;
+}
+
+.lead {
+    font-size: 1.12rem;
+    line-height: 1.7;
+    color: #647068;
+}
+
+.price {
+    display: block;
+    font: 2rem Georgia, serif;
+    margin: 30px 0 8px;
+}
+
+.stock{
+    color: #a5653d;
+}
+
+@media (max-width:700px) {
+    .detail{
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
