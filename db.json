@@ -1,0 +1,43 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "Wireless Headphones",
+      "price": 59.99,
+      "category": "Electronics",
+      "image": "https://placeholder.com",
+      "stock": 12
+    },
+    {
+      "id": "2",
+      "title": "Running Shoes",
+      "price": 89.99,
+      "category": "Sports",
+      "image": "https://placeholder.com",
+      "stock": 25
+    },
+    {
+      "id": "3",
+      "title": "Coffee Maker",
+      "price": 45.50,
+      "category": "Home",
+      "image": "https://placeholder.com",
+      "stock": 8
+    }
+  ],
+  "cart": [
+    {
+      "id": "1",
+      "productId": "1",
+      "quantity": 1,
+      "price": 59.99
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john@example.com"
+    }
+  ]
+}
