@@ -7,7 +7,7 @@
       "price": 48,
       "quantity": 12,
       "rating": 4.8,
-      "image": "src/assets/1.png",
+      "image": "assets/1.png",
       "description": "A warm, sculptural lamp that makes late-night work feel a little more considered."
     },
     {
@@ -17,7 +17,7 @@
       "price": 72,
       "quantity": 8,
       "rating": 4.7,
-      "image": "src/assets/2.png",
+      "image": "assets/2.png",
       "description": "A soft, oversized throw woven for slow Sundays and cooler evenings."
     },
     {
@@ -27,7 +27,7 @@
       "price": 96,
       "quantity": 0,
       "rating": 4.5,
-      "image": "src/assets/3.png",
+      "image": "assets/3.png",
       "description": "A structured everyday tote with room for the essentials and then some."
     },
     {
@@ -37,7 +37,7 @@
       "price": 64,
       "quantity": 5,
       "rating": 4.9,
-      "image": "src/assets/4.png",
+      "image": "assets/4.png",
       "description": "Hand-finished ceramic forms that bring an earthy rhythm to the table."
     },
     {
@@ -47,7 +47,7 @@
       "price": 189,
       "quantity": 3,
       "rating": 4.6,
-      "image": "src/assets/5.png",
+      "image": "assets/5.png",
       "description": "Immersive sound, tactile controls, and a battery built for the long way home."
     },
     {
@@ -57,7 +57,7 @@
       "price": 38,
       "quantity": 16,
       "rating": 4.4,
-      "image": "src/assets/6.png",
+      "image": "assets/6.png",
       "description": "A quiet ceramic planter for adding a little life to any corner."
     }
   ],
