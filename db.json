@@ -2,42 +2,67 @@
   "products": [
     {
       "id": "1",
-      "title": "Wireless Headphones",
-      "price": 59.99,
-      "category": "Electronics",
-      "image": "https://placeholder.com",
-      "stock": 12
+      "name": "Halo Desk Lamp",
+      "category": "Home",
+      "price": 48,
+      "quantity": 12,
+      "rating": 4.8,
+      "image": "src/assets/1.png",
+      "description": "A warm, sculptural lamp that makes late-night work feel a little more considered."
     },
     {
       "id": "2",
-      "title": "Running Shoes",
-      "price": 89.99,
-      "category": "Sports",
-      "image": "https://placeholder.com",
-      "stock": 25
+      "name": "Cloud Knit Throw",
+      "category": "Living",
+      "price": 72,
+      "quantity": 8,
+      "rating": 4.7,
+      "image": "src/assets/2.png",
+      "description": "A soft, oversized throw woven for slow Sundays and cooler evenings."
     },
     {
       "id": "3",
-      "title": "Coffee Maker",
-      "price": 45.50,
+      "name": "Cedar Carryall",
+      "category": "Accessories",
+      "price": 96,
+      "quantity": 0,
+      "rating": 4.5,
+      "image": "src/assets/3.png",
+      "description": "A structured everyday tote with room for the essentials and then some."
+    },
+    {
+      "id": "4",
+      "name": "Stoneware Set",
+      "category": "Kitchen",
+      "price": 64,
+      "quantity": 5,
+      "rating": 4.9,
+      "image": "src/assets/4.png",
+      "description": "Hand-finished ceramic forms that bring an earthy rhythm to the table."
+    },
+    {
+      "id": "5",
+      "name": "Arc Headphones",
+      "category": "Tech",
+      "price": 189,
+      "quantity": 3,
+      "rating": 4.6,
+      "image": "src/assets/5.png",
+      "description": "Immersive sound, tactile controls, and a battery built for the long way home."
+    },
+    {
+      "id": "6",
+      "name": "Moss Planter",
       "category": "Home",
-      "image": "https://placeholder.com",
-      "stock": 8
+      "price": 38,
+      "quantity": 16,
+      "rating": 4.4,
+      "image": "src/assets/6.png",
+      "description": "A quiet ceramic planter for adding a little life to any corner."
     }
   ],
   "cart": [
-    {
-      "id": "1",
-      "productId": "1",
-      "quantity": 1,
-      "price": 59.99
-    }
   ],
   "users": [
-    {
-      "id": "1",
-      "name": "John Doe",
-      "email": "john@example.com"
-    }
   ]
 }
