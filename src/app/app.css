@@ -1,0 +1,56 @@
+:host {
+    display: block
+}
+
+.site-header {
+    height: 76px;
+    background: #f7f5f0;
+    border-bottom: 1px solid #e6e1d8;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 max(24px, calc((100vw - 1192px)/2));
+    position: relative;
+    z-index: 3
+}
+
+.brand {
+    font: 2rem Georgia, serif;
+    color: #26332c;
+    text-decoration: none;
+    letter-spacing: -.05em
+}
+
+.brand span {
+    color: #c77c4b
+}
+
+.site-header nav {
+    display: flex;
+    align-items: center;
+    gap: 25px
+}
+
+.site-header nav a,
+.logout {
+    color: #526057;
+    text-decoration: none;
+    font-size: .85rem;
+    background: none;
+    border: 0;
+    padding: 0
+}
+
+.site-header nav a:hover,
+.site-header nav .active {
+    color: #c06e3b
+}
+
+.bag span {
+    background: #c77c4b;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: .7rem
+}
+ 
