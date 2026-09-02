@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { catchError, Observable, of, switchMap } from 'rxjs';
+import { catchError, forkJoin, map, Observable, of, switchMap } from 'rxjs';
 import { Product } from '../../core/models/product.model';
 import { ProductService } from '../../core/service/product';
 import { ActivatedRoute } from '@angular/router';
@@ -11,15 +11,19 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './product-detail.html',
 })
 export class ProductDetail implements OnInit{
-  product$: Observable<Product | null>;
+  product$!: Observable<Product | null>;
   error = false;
+  relatedProducts$! : Observable<Product[] | []>;
   
   constructor(
     private route: ActivatedRoute,
     private products:ProductService
 
-  ){
-    this.product$ = this.route.paramMap.pipe(
+  ){}
+
+  ngOnInit(): void {
+    
+    this.product$=this.route.paramMap.pipe(
       switchMap(params =>
         this.products.getProductById(params.get('id') ?? '').pipe(
           catchError(() => {
@@ -29,9 +33,22 @@ export class ProductDetail implements OnInit{
         )
       )
     );
-  }
 
-  ngOnInit(): void {
+
+    this.relatedProducts$ = this.product$.pipe(
+      switchMap(product => {
+        if(!product){
+          return of([]);
+        }
+
+        return forkJoin({
+          product: of(product),
+          relatedProducts: this.products.getProductByCategory(product.category)
+        }).pipe(
+          map(result => result.relatedProducts.filter( p=> p.id!=product.id))
+        )
+      })
+    );
     
   }
 

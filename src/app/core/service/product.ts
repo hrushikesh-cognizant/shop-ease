@@ -19,4 +19,8 @@ export class ProductService {
         return this.http.get<Product>(`${this.endpoint}/${id}`);
     }
 
+    getProductByCategory(category:string): Observable<Product[]>{
+        return this.http.get<Product[]>(`${this.endpoint}?category=${category}`);
+    }
+
 }
