@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { ProductModule } from './product/product-module';
+import { AuthModule } from './auth/auth-module';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { ProductModule } from './product/product-module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ProductModule
+    ProductModule,
+    AuthModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
