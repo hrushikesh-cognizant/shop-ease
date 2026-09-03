@@ -1,18 +1,15 @@
 <main class="container-wide page">
     <a routerLink="/" class="back"> &larr; Back to collection</a>
     <div *ngIf="product$ | async as product; else state" class="detail">
-        <img [src]="product.image" [alt]="product.name"/>
+        <img [src]="product.image" [alt]="product.name" />
         <div class="detail-copy">
             <p class="eyebrow">{{product.category}} / {{product.rating}} &#9733;</p>
             <h1>{{product.name}}</h1>
             <p class="lead">{{product.description}}</p>
             <strong class="price">{{product.price | currency : 'INR'}}</strong>
             <p class="stock">{{product.quantity ? product.quantity +' available today' : 'Currently out of stock'}}</p>
-            <button 
-                class="btn btn-dark btn-lg" 
-                (click)="addToCart(product)"
-                [disabled]="!product.quantity"
-            >Add to cart</button>
+            <button class="btn btn-dark btn-lg" (click)="addToCart(product)" [disabled]="!product.quantity">Add to
+                cart</button>
         </div>
     </div>
 
@@ -24,17 +21,28 @@
 
 
     <div *ngIf="relatedProducts$ | async as relatedProducts;">
-        <section *ngIf="relatedProducts.length">
-            <h2>Related Products</h2>
+        <section class="related-section" *ngIf="relatedProducts.length">
+            <h2 class="related-title">Related Products</h2>
             <!-- TODO: Add ProductCardComponent here-->
-            
-            <div *ngFor="let related of relatedProducts">
-                <div>
+
+            <!-- <div class="related-grid">
+                <div *ngFor="let related of relatedProducts">
                     <h5>{{related.name}}</h5>
-                    <p>{{related.price}}</p>
+                    <p>{{related.price | currency : 'INR'}}</p>
                     <a [routerLink]="['/products', related.id]" class="btn btn-outline-dark">View Details</a>
                 </div>
-                
+            </div> -->
+
+            <div class="related-grid">
+                <div *ngFor="let related of relatedProducts" class="related-card">
+                    <img [src]="related.image" [alt]="related.name" class="related-image">
+                    <div class="related-content">
+                        <p class="related-category"> {{ related.category }}</p>
+                        <h3 class="related-name">{{ related.name }}</h3>
+                        <p class="related-price">{{ related.price | currency:'INR' }}</p>
+                        <a [routerLink]="['/products', related.id]" class="related-link">View Details &rarr;</a>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
