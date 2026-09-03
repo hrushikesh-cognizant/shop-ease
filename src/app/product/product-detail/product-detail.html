@@ -18,17 +18,24 @@
 
     <ng-template #state>
         <div class="loading">
-            {{error ? 'We could not find that item.' : 'Loading produts...'}}
+            {{error ? 'We could not find that item.' : 'Loading products...'}}
         </div>
     </ng-template>
 
 
-    <!-- <div *ngIf="relatedProducts$ | async as relatedProducts;">
+    <div *ngIf="relatedProducts$ | async as relatedProducts;">
         <section *ngIf="relatedProducts.length">
             <h2>Related Products</h2>
-            <div>
-                //ProductCardCompoenent
+            <!-- TODO: Add ProductCardComponent here-->
+            
+            <div *ngFor="let related of relatedProducts">
+                <div>
+                    <h5>{{related.name}}</h5>
+                    <p>{{related.price}}</p>
+                    <a [routerLink]="['/products', related.id]" class="btn btn-outline-dark">View Details</a>
+                </div>
+                
             </div>
         </section>
-    </div> -->
+    </div>
 </main>
