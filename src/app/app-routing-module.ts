@@ -6,6 +6,8 @@ import { RegisterComponent } from './auth/register/register.component';
 import { CheckoutComponent } from './checkout/checkout/checkout';
 import { OrderSummaryComponent } from './checkout/order-summary/order-summary';
 import { ProductList } from './product/product-list/product-list';
+import { CartComponent } from './cart/cart-component/cart-component';
+import { CartItemComponent } from './cart/cart-item-component/cart-item-component';
 
 const routes: Routes = [
   { path: 'products/:id', component: ProductDetail },
@@ -16,7 +18,12 @@ const routes: Routes = [
   {path: 'checkout',component: CheckoutComponent},
   {path: 'checkout/summary',component: OrderSummaryComponent},
 
-  {path:'list', component:ProductList}
+  {path:'list', component:ProductList},
+
+  { path: 'cart', component: CartComponent },
+    // , canActivate: [authGuard] 
+   { path: 'cartitem', component: CartItemComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 
 @NgModule({

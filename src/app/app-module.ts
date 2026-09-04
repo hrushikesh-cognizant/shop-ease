@@ -5,6 +5,7 @@ import { App } from './app';
 import { ProductModule } from './product/product-module';
 import { AuthModule } from './auth/auth-module';
 import { CheckoutModule } from './checkout/checkout-module';
+import { CartModule } from './cart/cart-module';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { CheckoutModule } from './checkout/checkout-module';
     AppRoutingModule,
     ProductModule,
     AuthModule,
-    CheckoutModule
+    CheckoutModule,
+    CartModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

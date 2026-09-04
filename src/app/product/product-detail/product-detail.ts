@@ -3,6 +3,7 @@ import { catchError, forkJoin, map, Observable, of, switchMap } from 'rxjs';
 import { Product } from '../../core/models/product.model';
 import { ProductService } from '../../core/service/product';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from '../../core/service/cart';
 
 @Component({
   selector: 'app-product-detail',
@@ -17,8 +18,8 @@ export class ProductDetail implements OnInit{
   
   constructor(
     private route: ActivatedRoute,
-    private products:ProductService
-
+    private products:ProductService,
+    private cartService: CartService
   ){}
 
   ngOnInit(): void {
@@ -54,6 +55,7 @@ export class ProductDetail implements OnInit{
 
   //TODO: addToCart methods from CartService
   addToCart(product:Product):void{
-    console.log(product);
+    // console.log(product);
+    this.cartService.addToCart(product);
   }
 }

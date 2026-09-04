@@ -1,0 +1,61 @@
+<p>cart-component works!</p>
+
+
+<h2> 🛒Shopping Cart</h2>
+
+<div *ngIf="cartItems$ | async as items" class="cart-container">
+
+  <div class="cart-left">
+    <div *ngFor="let item of items">
+      <app-cart-item-component
+        [item]="item">
+      </app-cart-item-component>
+    </div>
+  </div>
+
+  <div class="cart-right">
+    <!-- <app-order-summary-component
+      [cartItems]="items">
+    </app-order-summary-component> -->
+
+    <div class="summary-card">
+
+  <h2>Order Summary</h2>
+
+  <div class="summary-row">
+    <span>Total Items</span>
+    <span>{{ totalItems }}</span>
+  </div>
+
+  <div class="summary-row">
+    <span>Subtotal</span>
+    <span>
+      {{ subtotal | currency:'INR':'symbol':'1.0-0' }}
+    </span>
+  </div>
+
+  <div class="summary-row">
+    <span>Delivery</span>
+    <span>
+      {{ getDeliveryCharge() | currency:'INR':'symbol':'1.0-0' }}
+    </span>
+  </div>
+
+  <hr>
+
+  <div class="summary-row total">
+    <span>Grand Total</span>
+    <span>
+      {{ getGrandTotal() | currency:'INR':'symbol':'1.0-0' }}
+    </span>
+  </div>
+
+  <button class="checkout-btn" (click)="checkOut()">
+    Proceed to Checkout
+  </button>
+
+</div>
+
+  </div>
+
+</div>

@@ -58,6 +58,9 @@ export class AuthService {
     return this.currentUserSubject.asObservable();
   }
 
+  getUser() {
+    return this.currentUserSubject.value;
+  }
 
   // private loggedIn = true;
 

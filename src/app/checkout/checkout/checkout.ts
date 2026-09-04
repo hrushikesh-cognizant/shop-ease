@@ -99,7 +99,7 @@ export class CheckoutComponent implements OnInit {
     .subscribe(() => {
 
       this.cartService
-        .clearCart()
+        .clearCart_1()
         .subscribe(() => {
 
           this.router.navigate([
