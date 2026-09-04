@@ -1,57 +1,68 @@
-
-<div class="login-container">
-  <h2 class="header" >Login Form</h2>
-  <!-- #loginForm="ngForm" captures the entire form state -->
-  <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)" novalidate>
-    
-    <!-- Email Field -->
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input 
-        type="email" 
-        id="email" 
-        name="email" 
-        [(ngModel)]="loginData.email" 
-        #emailRef="ngModel"
-        required 
-        email
-        class="form-control"
-      />
-      <!-- Validation Messages -->
-      <div *ngIf="emailRef.invalid && (emailRef.dirty || emailRef.touched)" class="error-msg">
-        <span *ngIf="emailRef.errors?.['required']">Email is required.</span>
-        <span *ngIf="emailRef.errors?.['email']">Please enter a valid email.</span>
+<main class="auth-page">
+  <div class="login-container">
+    <p class="eyebrow" >WELCOME TO SHOPEASE</p>
+    <h1>Good to see you again.</h1>
+    <!-- #loginForm="ngForm" captures the entire form state -->
+    <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)" novalidate>
+      
+      <!-- Email Field -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+          placeholder = "Email address"
+          type="email" 
+          id="email" 
+          name="email" 
+          [(ngModel)]="loginData.email" 
+          #emailRef="ngModel"
+          required 
+          email
+          class="form-control"
+        />
+        <!-- Validation Messages -->
+        <div *ngIf="emailRef.invalid && (emailRef.dirty || emailRef.touched)" class="alert alert-danger">
+          <span *ngIf="emailRef.errors?.['required']">Email is required.</span>
+          <span *ngIf="emailRef.errors?.['email']">Please enter a valid email.</span>
+        </div>
       </div>
-    </div>
 
-    <!-- Password Field -->
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input 
-        type="password" 
-        id="password" 
-        name="password" 
-        [(ngModel)]="loginData.password" 
-        #passwordRef="ngModel"
-        required 
-        minlength="6"
-        class="form-control"
-      />
-      <!-- Validation Messages -->
-      <div *ngIf="passwordRef.invalid && (passwordRef.dirty || passwordRef.touched)" class="error-msg">
-        <span *ngIf="passwordRef.errors?.['required']">Password is required.</span>
-        <span *ngIf="passwordRef.errors?.['minlength']">Password must be at least 6 characters long.</span>
+      <!-- Password Field -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input 
+          placeholder = "Password"
+          type="password" 
+          id="password" 
+          name="password" 
+          [(ngModel)]="loginData.password" 
+          #passwordRef="ngModel"
+          required 
+          minlength="6"
+          class="form-control"
+        />
+        <!-- Validation Messages -->
+        <div *ngIf="passwordRef.invalid && (passwordRef.dirty || passwordRef.touched)" class="alert alert-danger">
+          <span *ngIf="passwordRef.errors?.['required']">Password is required.</span>
+          <span *ngIf="passwordRef.errors?.['minlength']">Password must be at least 6 characters long.</span>
+        </div>
       </div>
-    </div>
 
-    <!-- Submit Button -->
-    <button type="submit" [disabled]="loginForm.invalid">
-      Sign In
-    </button>
-  </form>
+      <div *ngIf="authError" class="alert alert-danger">
+        {{errorMsg}}
+      </div>
 
-    <p class="toggle-text">
-    <span id="toggle-msg">Don't have an account?</span> 
-    <a  routerLink="/register">Register here</a>
-  </p>
-</div>
+      <!-- Submit Button -->
+      <button class="btn btn-dark w-100" type="submit" [disabled]="loginForm.invalid">
+        Sign In
+      </button>
+    </form>
+
+      <!-- <p class="toggle-text">
+        <span id="toggle-msg">Don't have an account?</span> 
+        <a  routerLink="/register">Register here</a>
+      </p> -->
+
+      <a routerLink="/register" class="switch btn btn-link">Don't have an account? Register here</a>
+  </div>
+
+</main>

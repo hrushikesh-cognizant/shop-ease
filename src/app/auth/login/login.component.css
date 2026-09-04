@@ -19,12 +19,17 @@ margin-left: -14em;
 
 /* Centered Layout Container */
 .login-container {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   background-color: #f4f7f6;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+
+  background-color: #fff;
+  width: min(440px, 100%);
+  padding: 40px;
+  border: 1px solid #e6e1d8
 }
 
 /* Card Styling */
@@ -136,3 +141,18 @@ button:disabled {
 background: #b0c4de;
 cursor: not-allowed;
 }*/
+
+
+
+.auth-page{
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  padding: 50px
+}
+
+
+.login-container h1{
+  font: 2.8rem Georgia, serif;
+  margin: 10px 0 28px
+}

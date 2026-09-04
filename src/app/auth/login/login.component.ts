@@ -43,35 +43,40 @@ export class LoginComponent {
   };
 
   errorMsg = '';
+  authError = false;
 
   onLogin(form: NgForm): void {
+    this.authError=false;
 
     if (form.valid) {
-
       this.authService.login(
         this.loginData.email,
         this.loginData.password
       ).subscribe({
         next: (users) => {
-console.log("Users>>>>>>>>>>>:"+ users)
+          
+// console.log("Users>>>>>>>>>>>:"+ users)
           if (users.length > 0) {
-            console.log("Valid");
-            console.log('Login Successful');
-            this.router.navigate(['/cart']);
+            // console.log("Valid");
+            // console.log('Login Successful');
+            this.router.navigate(['/']);
           } else {
+            this.authError = true;
             this.errorMsg = 'Invalid Email or Password';
-           alert( this.errorMsg = 'Invalid Email or Password');
+            alert( this.errorMsg = 'Invalid Email or Password');
           }
 
         },
         error: (err) => {
-          console.error(err);
+          // console.error(err);
+          this.authError = true;
           this.errorMsg = 'Login failed';
         }
       });
 
     } else {
-      console.error('Form is invalid');
+      // console.error('Form is invalid');
+      this.errorMsg = ' We could not sign you in. Please check your details.';
     }
   }
 }
