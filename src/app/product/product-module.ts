@@ -8,8 +8,8 @@ import { ProductList } from './product-list/product-list';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [ProductDetail,ProductFilter, ProductFilterPipe, ProductList],
+  declarations: [ProductDetail, ProductFilter, ProductFilterPipe, ProductList],
   imports: [CommonModule, RouterModule, FormsModule],
-  exports: [ProductList]
+  // exports: [ProductList]
 })
 export class ProductModule {}

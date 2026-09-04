@@ -15,10 +15,10 @@
 
     <div class="product-card"
      *ngFor="let product of products | productFilter:searchTerm:selectedCategory:minPrice:maxPrice">
-    <h3>{{ product.title }}</h3>
+    <h3>{{ product.name }}</h3>
     <p>Category: {{ product.category }}</p>
     <p>Price: {{ product.price }}</p>
-    <p>Stock: {{ product.stock }}</p>
+    <p>Stock: {{ product.quantity }}</p>
 </div>
 </div>
 </div>
