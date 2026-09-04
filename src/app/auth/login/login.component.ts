@@ -63,7 +63,7 @@ export class LoginComponent {
           } else {
             this.authError = true;
             this.errorMsg = 'Invalid Email or Password';
-            alert( this.errorMsg = 'Invalid Email or Password');
+           alert( this.errorMsg = 'Invalid Email or Password');
           }
 
         },

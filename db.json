@@ -61,8 +61,14 @@
       "description": "A quiet ceramic planter for adding a little life to any corner."
     }
   ],
-  "cart": [
-  ],
+  "cart": [],
   "users": [
-  ]
+    {
+      "name": "Alex McDoodle",
+      "email": "Alex.McDoodle@gmail.com",
+      "password": "Alex@123",
+      "id": "Z8AJ87tSddo"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

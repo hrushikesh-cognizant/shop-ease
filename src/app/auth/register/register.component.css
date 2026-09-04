@@ -1,28 +1,28 @@
 /* Page Centering */
-body {
+/* body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #f4f7fc;
-}
+} */
 
 /* Form Container */
-form {
+/* form {
   width: 400px;
   margin: 50px auto;
   padding: 25px;
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
+} */
 
 /* Heading */
-p {
+/* p {
   text-align: center;
   font-size: 24px;
   font-weight: bold;
   color: #333;
   margin-bottom: 20px;
-}
+} */
 
 /* Form Fields */
 div {
@@ -47,14 +47,14 @@ input {
 }
 
 /* Input Focus */
-input:focus {
+/* input:focus {
   outline: none;
   border-color: #4a90e2;
   box-shadow: 0 0 4px rgba(74, 144, 226, 0.4);
-}
+} */
 
 /* Button */
-button {
+/* button {
   width: 100%;
   padding: 12px;
   background: #4a90e2;
@@ -81,4 +81,65 @@ div small,
 color: red;
 font-size: 16px;
 
+} */
+
+
+.auth-page{
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  padding: 50px
 }
+
+.login-container {
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f7f6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+
+  background-color: #fff;
+  width: min(440px, 100%);
+  padding: 40px;
+  border: 1px solid #e6e1d8
+}
+
+
+.auth-page{
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  padding: 50px
+}
+
+
+.login-container h1{
+  font: 2.8rem Georgia, serif;
+  margin: 10px 0 28px
+}
+
+.login-container input{
+    margin-bottom: 12px;
+    padding: 12px;
+}
+
+
+.login-container small{
+  display: block;
+  color: #b14934;
+  margin: -7px 0 12px;
+}
+
+.login-container .btn-dark{
+  padding: 12px;
+  margin-top: 12px;
+}
+
+.switch{
+  color: #526057;
+  text-decoration: underline;
+  margin-top: 20px;
+}
+
+

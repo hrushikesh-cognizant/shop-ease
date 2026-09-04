@@ -156,3 +156,10 @@ cursor: not-allowed;
   font: 2.8rem Georgia, serif;
   margin: 10px 0 28px
 }
+
+
+.switch{
+  color: #526057;
+  text-decoration: underline;
+  margin-top: 20px;
+}

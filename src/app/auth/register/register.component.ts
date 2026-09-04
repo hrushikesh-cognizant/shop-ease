@@ -15,25 +15,25 @@ export class RegisterComponent {
 
 
 
-   registerForm: FormGroup;
+  registerForm: FormGroup;
 
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
 
     this.registerForm = this.fb.group({
       name: ['', Validators.required],
-     //  email: ['', [Validators.required, Validators.email]],
-      email: ['',[Validators.required, Validators.pattern(
-      '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$')]],
+      //  email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, Validators.pattern(
+        '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$')]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', [Validators.required]],
     },
-  {
-validators: passwordMatchValidator
+      {
+        validators: passwordMatchValidator
 
-});
-}
+      });
+  }
 
- onSubmit(): void {
+  onSubmit(): void {
 
     if (this.registerForm.invalid) {
       this.registerForm.markAllAsTouched();
