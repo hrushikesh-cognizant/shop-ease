@@ -1,0 +1,33 @@
+<div class="filter-container">
+    <div class="filter-item">
+        <label>Search</label>
+        <input #searchInput type="text"
+         [(ngModel)]="searchTerm"
+          (ngModelChange)="onFilterChange()"
+           placeholder="Search products.."/>
+    </div>
+    <div class="filter-item">
+        <label>Category</label>
+        <select [(ngModel)]="selectedCategory" (ngModelChange)="onFilterChange()">
+            <option value="All">
+            All Categories
+            </option>
+            <option 
+            *ngFor="let category of categories" 
+                [value]="category">
+                {{ category }}
+            </option>
+        </select>
+    </div>
+    <div class="filter-item">
+        <label>Min Price</label>
+        <input type="number" [(ngModel)]="minPrice" (ngModelChange)="onFilterChange()" placeholder="Min price"/>
+    </div>
+    <div class="filter-item">
+        <label>Max Price</label>
+        <input type="number" [(ngModel)]="maxPrice" (ngModelChange)="onFilterChange()" placeholder="Max price"/>
+    </div>
+        <button type="button" (click)="clearFilters()">Clear Filters</button>
+</div>
+
+

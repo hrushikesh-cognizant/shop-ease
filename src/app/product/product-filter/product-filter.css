@@ -1,0 +1,26 @@
+.filter-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filter-item input,
+.filter-item select{
+    width: 180px;
+    height: 40px;
+    padding: 6px 10px;
+    box-sizing: border-box;
+}
+.filter-item button{
+    height: 40px;
+    padding: 0px 20px;
+    cursor: pointer;
+}
