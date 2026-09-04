@@ -1,0 +1,13 @@
+.summary-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.summary-card {
+  width: 600px;
+  text-align: center;
+  background: #c7dff5;
+  border: 2px solid #4d7092;
+  padding: 40px;
+}

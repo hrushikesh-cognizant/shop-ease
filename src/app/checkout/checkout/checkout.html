@@ -1,0 +1,91 @@
+<div class="checkout-container">
+
+  <div class="checkout-card">
+
+    <h2>Checkout</h2>
+
+    <form [formGroup]="checkoutForm">
+
+      <h4>Delivery Information</h4>
+
+      <input
+        type="text"
+        formControlName="name"
+        placeholder="Name">
+
+      <textarea
+        rows="3"
+        formControlName="address"
+        placeholder="Address">
+      </textarea>
+
+      <input
+        type="text"
+        formControlName="city"
+        placeholder="City">
+
+      <input
+        type="text"
+        formControlName="pincode"
+        placeholder="Pincode">
+
+      <h4>Payment Details</h4>
+
+      <input
+        type="text"
+        formControlName="cardNumber"
+        placeholder="Card Number">
+
+    </form>
+
+    <!--
+
+    <h4>Cart Summary</h4>
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Product ID</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let item of cartItems">
+
+          <td>{{ item.productId }}</td>
+
+          <td>{{ item.quantity }}</td>
+
+          <td>{{ item.price }}</td>
+
+          <td>
+            {{ item.quantity * item.price }}
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table> 
+  -->
+
+    <h3>
+      Total Value : ₹{{ total }}
+    </h3>
+
+    <button
+      type="button"
+      (click)="placeOrder()">
+
+      Place Order
+
+    </button>
+
+  </div>
+
+</div>

@@ -1,0 +1,30 @@
+<div class="summary-container">
+
+  <div class="summary-card">
+
+    <h2>Order Summary</h2>
+
+    <h3>✅ Order Confirmed</h3>
+
+    <p>
+      Your Order Will Be Delivered To
+    </p>
+
+    <h4>{{ order?.name }}</h4>
+
+    <p>{{ order?.address }}</p>
+
+    <p>
+      {{ order?.city }}
+      -
+      {{ order?.pincode }}
+    </p>
+
+    <h3>
+      Total Paid :
+      ₹{{ order?.total }}
+    </h3>
+
+  </div>
+
+</div>
