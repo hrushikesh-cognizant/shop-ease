@@ -11,9 +11,7 @@ export class CheckoutService {
     'http://localhost:3000/orders';
 
   private orderData: any;
-
-  // lastOrder: {items:CartItem[]; total:number; address:string, name:string, city:string, pincode:number} | null = {total:90, name:"John", address:"Main Street, NY", city:"New York", pincode:10001, items:[]};
-  lastOrder: {items:CartItem[]; total:number; address:string, name:string, city:string, pincode:number} | null = null;
+  // private orderData: any = {total:90, name:"John", address:"Main Street, NY", city:"New York", pincode:10001, items:[]};
 
   constructor(
     private http: HttpClient
