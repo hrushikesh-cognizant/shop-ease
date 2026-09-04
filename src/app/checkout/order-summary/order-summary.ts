@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CheckoutService }
-from '../../core/service/checkout.service';
+import { CheckoutService } from '../../core/service/checkout';
 
 @Component({
   selector: 'app-order-summary',
-  standalone: true,
-  imports: [CommonModule],
+  // standalone: true,
+  standalone: false,
   templateUrl: './order-summary.html',
   styleUrls: ['./order-summary.css']
 })

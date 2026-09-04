@@ -57,4 +57,19 @@ export class AuthService {
   getCurrentUser(): Observable<any> {
     return this.currentUserSubject.asObservable();
   }
+
+
+  // private loggedIn = true;
+
+  // isLoggedIn(): boolean {
+  //   return this.loggedIn;
+  // }
+
+  // login(): void {
+  //   this.loggedIn = true;
+  // }
+
+  // logout(): void {
+  //   this.loggedIn = false;
+  // }
 }

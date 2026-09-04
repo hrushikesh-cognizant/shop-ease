@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { ProductModule } from './product/product-module';
 import { AuthModule } from './auth/auth-module';
+import { CheckoutModule } from './checkout/checkout-module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { AuthModule } from './auth/auth-module';
     BrowserModule,
     AppRoutingModule,
     ProductModule,
-    AuthModule
+    AuthModule,
+    CheckoutModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

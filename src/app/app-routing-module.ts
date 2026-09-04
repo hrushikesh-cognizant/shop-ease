@@ -19,11 +19,6 @@ const routes: Routes = [
   {
     path: 'checkout/summary',
     component: OrderSummaryComponent
-  },
-  {
-    path: '',
-    redirectTo: 'checkout',
-    pathMatch: 'full'
   }
 ];
 

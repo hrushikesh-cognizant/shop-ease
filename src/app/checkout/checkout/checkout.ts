@@ -13,18 +13,19 @@ import {
   RouterModule
 } from '@angular/router';
 
-import { CartService } from '../../core/service/cart.service';
-import { CheckoutService } from '../../core/service/checkout.service';
+import { CartService } from '../../core/service/cart';
+import { CheckoutService } from '../../core/service/checkout';
 
 
 @Component({
   selector: 'app-checkout',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    RouterModule
-  ],
+  // standalone: true,
+  standalone: false,
+  // imports: [
+  //   CommonModule,
+  //   ReactiveFormsModule,
+  //   RouterModule
+  // ],
   templateUrl: './checkout.html',
   styleUrls: ['./checkout.css']
 })
