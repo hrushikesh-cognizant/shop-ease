@@ -8,33 +8,18 @@
 
       <h4>Delivery Information</h4>
 
-      <input
-        type="text"
-        formControlName="name"
-        placeholder="Name">
+      <input type="text" formControlName="name" placeholder="Name">
 
-      <textarea
-        rows="3"
-        formControlName="address"
-        placeholder="Address">
+      <textarea rows="3" formControlName="address" placeholder="Address">
       </textarea>
 
-      <input
-        type="text"
-        formControlName="city"
-        placeholder="City">
+      <input type="text" formControlName="city" placeholder="City">
 
-      <input
-        type="text"
-        formControlName="pincode"
-        placeholder="Pincode">
+      <input type="text" formControlName="pincode" placeholder="Pincode">
 
       <h4>Payment Details</h4>
 
-      <input
-        type="text"
-        formControlName="cardNumber"
-        placeholder="Card Number">
+      <input type="text" formControlName="cardNumber" placeholder="Card Number">
 
     </form>
 
@@ -78,9 +63,7 @@
       Total Value : ₹{{ total }}
     </h3>
 
-    <button
-      type="button"
-      (click)="placeOrder()">
+    <button type="button" (click)="placeOrder()">
 
       Place Order
 

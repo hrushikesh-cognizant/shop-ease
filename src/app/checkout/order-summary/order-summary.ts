@@ -21,7 +21,7 @@ export class OrderSummaryComponent implements OnInit {
   ngOnInit(): void {
 
     this.order =
-      this.checkoutService.getOrderData();
+      this.checkoutService.lastOrder;
 
   }
 

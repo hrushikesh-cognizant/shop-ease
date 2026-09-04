@@ -11,3 +11,21 @@
   border: 2px solid #4d7092;
   padding: 40px;
 }
+
+.summary-page{
+  text-align: center;
+  padding-top: 90px;
+}
+
+.summary-page h1{
+  font: clamp(2.5rem, 5vm, 5rem) Georgia, serif;
+  max-width: 750px;
+  margin: 15px auto;
+}
+
+.summary-page p:not(.eyebrow){
+  font-size: 1.1rem;
+  margin: 25px auto 35px;
+}
+
+
