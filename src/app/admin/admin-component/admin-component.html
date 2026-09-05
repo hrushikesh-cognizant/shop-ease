@@ -1,9 +1,9 @@
 <!-- <p>admin-component works!</p> -->
-<main>
-    <p>ADMIN PANEL</p>
-    <h1>Add a new Product</h1>
+<main class="containerp-wide page">
+    <p class="eyebrow">ADMIN PANEL</p>
+    <h1 class="page-title">Add a new Product</h1>
 
-    <form [formGroup]="form" (ngSubmit)="save()">
+    <form [formGroup]="form" (ngSubmit)="save()" class="admin-form">
         <input class="form-control" placeholder="Name" formControlName="name"/>
         <input class="form-control" placeholder="Category" formControlName="category"/>
         <input class="form-control" placeholder="Price" type="number" formControlName="price"/>
@@ -15,4 +15,8 @@
             [disabled]="form.invalid"
             >Save Product</button>
     </form>
+
+    <div *ngIf="saved" class="alert alert-sucess mt-3">
+        Product saved successfully!
+    </div>
 </main>

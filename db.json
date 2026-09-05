@@ -59,16 +59,6 @@
       "rating": 4.4,
       "image": "assets/6.png",
       "description": "A quiet ceramic planter for adding a little life to any corner."
-    },
-    {
-      "name": "Product-Name",
-      "category": "Home",
-      "price": 10,
-      "image": "assets/1.png",
-      "description": "Description",
-      "quantity": 1,
-      "rating": 5,
-      "id": "oSDyjc-dvAE"
     }
   ],
   "orders": [

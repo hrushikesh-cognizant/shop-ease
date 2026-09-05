@@ -1,0 +1,25 @@
+.page{
+    padding-top: 40px;
+    padding-bottom: 100px;
+}
+
+.page-title {
+  font: 2.5rem Georgia, serif;
+  margin-bottom: 25px;
+}
+
+.admin-form {
+  max-width: 600px;
+}
+
+.admin-form input,
+.admin-form textarea {
+  margin-bottom: 15px;
+  padding: 12px;
+}
+
+.admin-form button {
+  margin-top: 10px;
+}
+
+ 
