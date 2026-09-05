@@ -48,7 +48,7 @@ export class RegisterComponent {
 
     this.authService.register(user.name!, user.email!, user.password!).subscribe({
       next: (response) => {
-        console.log('User Registered', response);
+        // console.log('User Registered', response);
         alert('Registration Successful');
         this.registerForm.reset();
         this.router.navigate(['/']);
