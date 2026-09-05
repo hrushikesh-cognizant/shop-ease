@@ -91,6 +91,13 @@
   ],
   "users": [
     {
+      "name": "admin-1",
+      "email": "admin@gmail.com",
+      "password": "Admin@123",
+      "id": "admin-1",
+      "role": "admin"
+    },
+    {
       "name": "Alex McDoodle",
       "email": "Alex.McDoodle@gmail.com",
       "password": "Alex@123",

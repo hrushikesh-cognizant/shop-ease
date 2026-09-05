@@ -99,4 +99,8 @@ export class AuthService {
   // logout(): void {
   //   this.loggedIn = false;
   // }
+
+  get isAdmin(): boolean{
+    return this.currentUser?.role === 'admin';
+  }
 }
