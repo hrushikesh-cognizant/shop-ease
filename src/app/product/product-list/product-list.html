@@ -1,33 +1,44 @@
 <section class="categlog container-wide" id="catelog">
+
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">CURATED FOR YOU</p>
+            <h2>Find your next favorite.</h2>
+        </div>
+        <span class="results">{{products.length}} pieces</span>
+    </div>
+
     <div class="page-container">
         <!-- <h1 class="page-title">ShopEase - Search & Filter</h1> -->
         <div class="filter-section">
             <app-product-filter [categories]="categories" (filterChange)="onFilterChange($event)"></app-product-filter>
         </div>
-        <p *ngIf="loading">
+
+        <div *ngIf="loading" class="loading">
             Loading products...
-        </p>
-
-        <p *ngIf="errorMessage">
-            {{ errorMessage }}
-        </p>
-        <div class="product-grid" *ngIf="!loading && !errorMessage">
-
-            <!-- <div class="product-card"
-            *ngFor="let product of products | productFilter:searchTerm:selectedCategory:minPrice:maxPrice">
-            <h3>{{ product.name }}</h3>
-            <p>Category: {{ product.category }}</p>
-            <p>Price: {{ product.price }}</p>
-            <p>Stock: {{ product.quantity }}</p>
-        </div> -->
-            <div class="product-card">
-                <app-product-card
-                    *ngFor="let product of products | productFilter:searchTerm:selectedCategory:minPrice:maxPrice"
-                    [product]="product" (added)="lastAdded = $event">
-
-                </app-product-card>
-            </div>
         </div>
+
+        <div *ngIf="errorMessage" class="alert alert-warning">
+            {{ errorMessage }}
+        </div>
+        <div class="product-grid">
+            <app-product-card
+                *ngFor="let product of products | productFilter:searchTerm:selectedCategory:minPrice:maxPrice"
+                [product]="product" (added)="lastAdded = $event">
+
+            </app-product-card>
+        </div>
+        <!-- <div class="product-grid" *ngIf="!loading && !errorMessage">
+
+            <div class="product-card"
+                *ngFor="let product of products | productFilter:searchTerm:selectedCategory:minPrice:maxPrice">
+                <h3>{{ product.name }}</h3>
+                <p>Category: {{ product.category }}</p>
+                <p>Price: {{ product.price }}</p>
+                <p>Stock: {{ product.quantity }}</p>
+            </div>
+            
+        </div> -->
     </div>
 
 </section>
