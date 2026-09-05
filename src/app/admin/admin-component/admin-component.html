@@ -1,1 +1,18 @@
-<p>admin-component works!</p>
+<!-- <p>admin-component works!</p> -->
+<main>
+    <p>ADMIN PANEL</p>
+    <h1>Add a new Product</h1>
+
+    <form [formGroup]="form" (ngSubmit)="save()">
+        <input class="form-control" placeholder="Name" formControlName="name"/>
+        <input class="form-control" placeholder="Category" formControlName="category"/>
+        <input class="form-control" placeholder="Price" type="number" formControlName="price"/>
+        <input class="form-control" placeholder="Image URL" formControlName="image"/>
+        <textarea class="form-control" placeholder="Description" formControlName="description"></textarea>
+        <input class="form-control" placeholder="Quantity" type="number" formControlName="quantity"/>
+
+        <button class="btn btn-dark mt-3"
+            [disabled]="form.invalid"
+            >Save Product</button>
+    </form>
+</main>
