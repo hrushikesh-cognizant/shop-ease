@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Product} from '../../core/models/product.model';
+import { Product } from '../../core/models/product.model';
 import { FilterCriteria } from '../product-filter/product-filter';
+import { ProductService } from '../../core/service/product';
+import { catchError, of } from 'rxjs';
 
 @Component({
   selector: 'app-product-list',
@@ -9,7 +11,7 @@ import { FilterCriteria } from '../product-filter/product-filter';
   styleUrl: './product-list.css',
   templateUrl: './product-list.html',
 })
-export class ProductList implements OnInit{
+export class ProductList implements OnInit {
 
   products: Product[] = [];
   categories: string[] = [];
@@ -17,27 +19,57 @@ export class ProductList implements OnInit{
   selectedCategory = 'All';
   minPrice: number | null = null;
   maxPrice: number | null = null;
-  loading =false;
+  loading = false;
+  error = false;
   errorMessage = '';
-  lastAdded? : Product;
+  lastAdded?: Product;
 
   constructor(
-    private http: HttpClient
-  ){}
+    private http: HttpClient,
+    private productService: ProductService
+  ) { }
 
   ngOnInit(): void {
-    console.log('ProductList initialized');
+    // console.log('ProductList initialized');
     this.loadProducts();
+
   }
 
   loadProducts(): void {
     this.loading = true;
     this.errorMessage = '';
-    this.http.get<Product[]>('http://localhost:3000/products').subscribe({
+    // this.http.get<Product[]>('http://localhost:3000/products').subscribe({
+    //   next: (products) => {
+    //     console.log('Products from API:', products);
+    //     this.products = products;
+    //     this.categories = [
+    //       ...new Set(
+    //         products.map(
+    //           product => product.category
+    //         )
+    //       )
+    //     ];
+    //     this.loading = false;
+    //   },
+    //   error: (error) => {
+    //     console.error(
+    //       'Error loading products:', error
+    //     );
+    //     this.errorMessage = 'Unable to load products.';
+    //     this.loading = false;
+    //   }
+    // });
+
+    this.productService.getProducts().pipe(
+      catchError(() => {
+        this.error = true;
+        return of([]);
+      })
+    ).subscribe({
       next: (products) => {
-        console.log('Products from API:', products);
-        this.products= products;
-        this.categories=[
+        // console.log('Products from API:', products);
+        this.products = products;
+        this.categories = [
           ...new Set(
             products.map(
               product => product.category

@@ -1,17 +1,17 @@
-<article>
-    <a routerLink="['/products', product.id]">
+<article class="product-card" [class.sold-out]="!product.quantity"]>
+    <a routerLink="['/products', product.id]" class="product-image">
         <img [src]="product.image" [alt]="product.name"/>
-        <span>{{product.category}}</span>
+        <span class="category">{{product.category}}</span>
     </a>
 
-    <div>
-        <div>{{product.rating}}</div>
+    <div class="product-copy">
+        <div class="rating"> &#9733; {{product.rating}}</div>
         <h3>{{product.name}}</h3>
         <p>{{product.description}}</p>
 
-        <div>
+        <div class="product-footer">
             <strong>{{product.price | currency:'INR'}}</strong>
-            <button (click)="add()" [disabled]="!product.quantity">
+            <button class="btn btn-dark btn-sm" (click)="add()" [disabled]="!product.quantity">
                 {{product.quantity > 0 ? 'Add to Cart' : 'Out of Stock'}}
             </button>
         </div>
