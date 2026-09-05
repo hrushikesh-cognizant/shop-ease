@@ -42,7 +42,7 @@ export class CheckoutComponent implements OnInit {
     private cartService: CartService,
     private checkoutService: CheckoutService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
 
@@ -51,10 +51,10 @@ export class CheckoutComponent implements OnInit {
       address: ['', Validators.required],
       city: ['', Validators.required],
       pincode: ['', Validators.required],
-      cardNumber: ['', Validators.required]
+      cardNumber: ['', [Validators.required, Validators.minLength(12)]]
     });
 
-    this.loadCart();
+    // this.loadCart();
 
   }
 
@@ -76,40 +76,55 @@ export class CheckoutComponent implements OnInit {
 
   }
 
- placeOrder(): void {
+  // placeOrder(): void {
 
-  if (this.checkoutForm.invalid) {
-    return;
+  //   if (this.checkoutForm.invalid) {
+  //     return;
+  //   }
+
+  //   const order = {
+
+  //     ...this.checkoutForm.value,
+
+  //     items: this.cartItems,
+
+  //     total: Number(
+  //       this.total.toFixed(2)
+  //     )
+
+  //   };
+
+  //   this.checkoutService
+  //     .placeOrder(order)
+  //     .subscribe(() => {
+
+  //       this.cartService
+  //         .clearCart_1()
+  //         .subscribe(() => {
+
+  //           this.router.navigate([
+  //             '/checkout/summary'
+  //           ]);
+
+  //         });
+
+  //     });
+
+  // }
+
+  placeOrder(): void {
+    // console.log("Inside Place Order method")
+    this.checkoutService.orderData = {
+      items: this.cartService.snapShot,
+      total: this.cartService.total,
+      name: `${this.checkoutForm.value.name}`,
+      address: `${this.checkoutForm.value.address}`,
+      city: `${this.checkoutForm.value.city}`,
+      pincode: this.checkoutForm.value.pincode
+
+    };
+    this.cartService.clearCart();
+    this.router.navigate(['/checkout/summary']);
   }
-
-  const order = {
-
-    ...this.checkoutForm.value,
-
-    items: this.cartItems,
-
-    total: Number(
-      this.total.toFixed(2)
-    )
-
-  };
-
-  this.checkoutService
-    .placeOrder(order)
-    .subscribe(() => {
-
-      this.cartService
-        .clearCart_1()
-        .subscribe(() => {
-
-          this.router.navigate([
-            '/checkout/summary'
-          ]);
-
-        });
-
-    });
-
-}
 
 }

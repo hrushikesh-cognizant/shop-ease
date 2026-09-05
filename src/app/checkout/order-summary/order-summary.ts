@@ -16,12 +16,12 @@ export class OrderSummaryComponent implements OnInit {
 
   constructor(
     private checkoutService: CheckoutService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
 
-    this.order =
-      this.checkoutService.getOrderData();
+    // this.order = this.checkoutService.getOrderData();
+    this.order = this.checkoutService.orderData;
 
   }
 

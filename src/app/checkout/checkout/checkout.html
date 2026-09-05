@@ -63,10 +63,8 @@
       Total Value : ₹{{ total }}
     </h3>
 
-    <button type="button" (click)="placeOrder()">
-
+    <button type="button" (click)="placeOrder()" [disabled]="checkoutForm.invalid">
       Place Order
-
     </button>
 
   </div>
