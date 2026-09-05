@@ -8,6 +8,7 @@ import { OrderSummaryComponent } from './checkout/order-summary/order-summary';
 import { ProductList } from './product/product-list/product-list';
 import { CartComponent } from './cart/cart-component/cart-component';
 import { CartItemComponent } from './cart/cart-item-component/cart-item-component';
+import { AuthGuard } from './core/guards/auth-guard';
 
 const routes: Routes = [
   { path: 'products/:id', component: ProductDetail },
@@ -19,7 +20,9 @@ const routes: Routes = [
   // { path: 'checkout/summary', component: OrderSummaryComponent },
 
   {
-    path: 'checkout', children: [
+    path: 'checkout', 
+    canActivate: [AuthGuard],
+    children: [
       { path: '', component: CheckoutComponent },
       { path: 'summary', component: OrderSummaryComponent }
     ],
