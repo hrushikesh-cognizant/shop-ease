@@ -15,6 +15,7 @@ import {
 
 import { CartService } from '../../core/service/cart';
 import { CheckoutService } from '../../core/service/checkout';
+import { AuthService } from '../../core/service/auth';
 
 
 @Component({
@@ -41,7 +42,8 @@ export class CheckoutComponent implements OnInit {
     private fb: FormBuilder,
     private cartService: CartService,
     private checkoutService: CheckoutService,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -114,17 +116,31 @@ export class CheckoutComponent implements OnInit {
 
   placeOrder(): void {
     // console.log("Inside Place Order method")
-    this.checkoutService.orderData = {
-      items: this.cartService.snapShot,
+
+    const order = {
+      userEmail: this.authService.currentUser?.email ?? '',
+      item: this.cartService.snapShot,
       total: this.cartService.total,
       name: `${this.checkoutForm.value.name}`,
       address: `${this.checkoutForm.value.address}`,
       city: `${this.checkoutForm.value.city}`,
-      pincode: this.checkoutForm.value.pincode
-
+      pincode: this.checkoutForm.value.pincode,
+      status: 'placed' as const,
+      createdAt: new Date().toISOString()
     };
-    this.cartService.clearCart();
-    this.router.navigate(['/checkout/summary']);
+
+    this.checkoutService.placeOrder(order).subscribe({
+      next:(savedOrder) =>{
+        this.checkoutService.orderData = {items:savedOrder.item, total:savedOrder.total, name:savedOrder.name, address:savedOrder.name, city:savedOrder.city, pincode:savedOrder.pincode};
+        this.cartService.clearCart();
+        this.router.navigate(['/checkout/summary']);
+      },
+      error:() => {
+        alert("We could not place your order. Please try again.")
+      }
+    });
+
+    
   }
 
 }

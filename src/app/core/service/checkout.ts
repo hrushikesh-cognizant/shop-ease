@@ -41,6 +41,7 @@ export class CheckoutService {
   // }
 
   placeOrder(order: Omit<Order, 'id'>): Observable<Order>{
+    // console.log(order);
     return this.http.post<Order>(this.orderUrl, order);
   }
 

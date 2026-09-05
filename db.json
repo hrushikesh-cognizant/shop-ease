@@ -61,7 +61,34 @@
       "description": "A quiet ceramic planter for adding a little life to any corner."
     }
   ],
-  "cart": [],
+  "orders": [
+    {
+      "userEmail": "John.Adams@gmail.com",
+      "item": [
+        {
+          "product": {
+            "id": "5",
+            "name": "Arc Headphones",
+            "category": "Tech",
+            "price": 189,
+            "quantity": 3,
+            "rating": 4.6,
+            "image": "assets/5.png",
+            "description": "Immersive sound, tactile controls, and a battery built for the long way home."
+          },
+          "quantity": 1
+        }
+      ],
+      "total": 189,
+      "name": "John",
+      "address": "Main Street",
+      "city": "Pune",
+      "pincode": "411057",
+      "status": "placed",
+      "createdAt": "2026-09-05T10:25:36.789Z",
+      "id": "zE00HdEAobE"
+    }
+  ],
   "users": [
     {
       "name": "Alex McDoodle",
