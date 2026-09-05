@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '../../core/models/product.model';
 import { FilterCriteria } from '../product-filter/product-filter';
@@ -26,7 +26,8 @@ export class ProductList implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private productService: ProductService
+    private productService: ProductService,
+    private cdr: ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {
@@ -69,6 +70,10 @@ export class ProductList implements OnInit {
       next: (products) => {
         // console.log('Products from API:', products);
         this.products = products;
+        // console.log('Before setting loading false:', this.loading);
+        this.loading = false;
+        // console.log('After setting loading false:', this.loading);
+        this.cdr.detectChanges();
         this.categories = [
           ...new Set(
             products.map(
@@ -76,7 +81,7 @@ export class ProductList implements OnInit {
             )
           )
         ];
-        this.loading = false;
+        
       },
       error: (error) => {
         console.error(
