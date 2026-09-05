@@ -80,14 +80,16 @@ export class CartComponent implements OnInit {
   }
 
   getSubtotal(): number {
-    return this.cartItems.reduce(
-      (total, item) => total + (item.product.price * item.quantity),
-      0
-    );
+    // return this.cartItems.reduce(
+    //   (total, item) => total + (item.product.price * item.quantity),
+    //   0
+    // );
+
+    return this.cartService.total;
   }
 
   getDeliveryCharge(): number {
-    return this.getSubtotal() > 50000 ? 0 : 100;
+    return this.getSubtotal() > 500 ? 0 : 100;
   }
 
   getGrandTotal(): number {

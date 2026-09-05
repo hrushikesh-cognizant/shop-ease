@@ -80,7 +80,24 @@
       </div>
 
       <aside>
+        <h2>Order Summary</h2>
+        <div>
+          <span>Subtotal</span>
+          <strong>{{getSubtotal() | currency:'INR'}}</strong>
+        </div>
+        <div>
+          <span>Delivery</span>
+          <span>{{getDeliveryCharge() | currency:'INR'}}</span>
+        </div>
+        <hr/>
 
+
+        <div>
+          <span>Total</span>
+          <strong>{{getGrandTotal() | currency:'INR'}}</strong>
+        </div>
+
+        <a routerLink="/checkout" class="btn btn-dark w-100 mt-4">Continue to checkout</a>
       </aside>
 
     </div>
