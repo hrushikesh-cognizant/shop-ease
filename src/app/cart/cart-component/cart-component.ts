@@ -22,7 +22,10 @@ export class CartComponent implements OnInit {
   totalAmount = 0;
   cartItems$!: Observable<CartItem[]>;
 
-  constructor(private cartService: CartService, private authService: AuthService, private router: Router) { }
+  constructor(
+    private cartService: CartService, 
+    private authService: AuthService, 
+    private router: Router) { }
 
 
   totalItems = 0;
