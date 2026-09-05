@@ -6,6 +6,7 @@ import { ProductModule } from './product/product-module';
 import { AuthModule } from './auth/auth-module';
 import { CheckoutModule } from './checkout/checkout-module';
 import { CartModule } from './cart/cart-module';
+import { AdminModule } from './admin/admin-module';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { CartModule } from './cart/cart-module';
     ProductModule,
     AuthModule,
     CheckoutModule,
-    CartModule
+    CartModule,
+    AdminModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

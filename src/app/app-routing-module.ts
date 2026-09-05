@@ -9,6 +9,7 @@ import { ProductList } from './product/product-list/product-list';
 import { CartComponent } from './cart/cart-component/cart-component';
 import { CartItemComponent } from './cart/cart-item-component/cart-item-component';
 import { AuthGuard } from './core/guards/auth-guard';
+import { AdminComponent } from './admin/admin-component/admin-component';
 
 const routes: Routes = [
   { path: 'products/:id', component: ProductDetail },
@@ -33,8 +34,10 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   // , canActivate: [authGuard]
   // { path: 'cartitem', component: CartItemComponent },
-  { path: '**', redirectTo: '' },
+  
 
+  {path:'admin', component:AdminComponent},
+  { path: '**', redirectTo: '' },
 
 ];
 
