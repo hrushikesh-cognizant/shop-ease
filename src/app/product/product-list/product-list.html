@@ -1,24 +1,32 @@
 <div class="page-container">
-<h1 class="page-title">ShopEase - Search & Filter</h1>
-<div class="filter-section">
-<app-product-filter [categories]="categories" 
-(filterChange)="onFilterChange($event)"></app-product-filter>
-</div>
-<p *ngIf="loading">
-    Loading products...
-</p>
+    <h1 class="page-title">ShopEase - Search & Filter</h1>
+    <div class="filter-section">
+        <app-product-filter [categories]="categories" (filterChange)="onFilterChange($event)"></app-product-filter>
+    </div>
+    <p *ngIf="loading">
+        Loading products...
+    </p>
 
-<p *ngIf="errorMessage">
-    {{ errorMessage }}
-</p>
-<div class="product-grid" *ngIf="!loading && !errorMessage">
+    <p *ngIf="errorMessage">
+        {{ errorMessage }}
+    </p>
+    <div class="product-grid" *ngIf="!loading && !errorMessage">
 
-    <div class="product-card"
-     *ngFor="let product of products | productFilter:searchTerm:selectedCategory:minPrice:maxPrice">
-    <h3>{{ product.name }}</h3>
-    <p>Category: {{ product.category }}</p>
-    <p>Price: {{ product.price }}</p>
-    <p>Stock: {{ product.quantity }}</p>
-</div>
-</div>
+        <!-- <div class="product-card"
+            *ngFor="let product of products | productFilter:searchTerm:selectedCategory:minPrice:maxPrice">
+            <h3>{{ product.name }}</h3>
+            <p>Category: {{ product.category }}</p>
+            <p>Price: {{ product.price }}</p>
+            <p>Stock: {{ product.quantity }}</p>
+        </div> -->
+        <div class="product-card">
+            <app-product-card 
+                *ngFor="let product of products | productFilter:searchTerm:selectedCategory:minPrice:maxPrice"
+                [product]="product"
+                (added) = "lastAdded = $event"
+            >
+                
+            </app-product-card>
+        </div>
+    </div>
 </div>

@@ -19,6 +19,7 @@ export class ProductList implements OnInit{
   maxPrice: number | null = null;
   loading =false;
   errorMessage = '';
+  lastAdded? : Product;
 
   constructor(
     private http: HttpClient

@@ -6,9 +6,10 @@ import { ProductFilter } from './product-filter/product-filter';
 import { ProductFilterPipe } from './product-filter-pipe';
 import { ProductList } from './product-list/product-list';
 import { FormsModule } from '@angular/forms';
+import { ProductCard } from './product-card/product-card';
 
 @NgModule({
-  declarations: [ProductDetail, ProductFilter, ProductFilterPipe, ProductList],
+  declarations: [ProductDetail, ProductFilter, ProductFilterPipe, ProductList, ProductCard],
   imports: [CommonModule, RouterModule, FormsModule],
   // exports: [ProductList]
 })

@@ -1,0 +1,19 @@
+<article>
+    <a routerLink="['/products', product.id]">
+        <img [src]="product.image" [alt]="product.name"/>
+        <span>{{product.category}}</span>
+    </a>
+
+    <div>
+        <div>{{product.rating}}</div>
+        <h3>{{product.name}}</h3>
+        <p>{{product.description}}</p>
+
+        <div>
+            <strong>{{product.price | currency:'INR'}}</strong>
+            <button (click)="add()" [disabled]="!product.quantity">
+                {{product.quantity > 0 ? 'Add to Cart' : 'Out of Stock'}}
+            </button>
+        </div>
+    </div>
+</article>
