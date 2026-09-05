@@ -56,7 +56,6 @@ export class LoginComponent {
         value.password
       ).subscribe({
         next: () => {
-          console.log('Login Successful');
           this.router.navigate(['/']);
           // console.log("Users>>>>>>>>>>>:"+ users)
           // if (user) {
@@ -74,7 +73,7 @@ export class LoginComponent {
           // console.log('Login error');
           // console.error(err);
           this.authError = true;
-          this.errorMsg = 'Login failed';
+          this.errorMsg = err.message || 'An error occurred during login.';
         },
         complete: () => {
           // console.log('Login request completed');
