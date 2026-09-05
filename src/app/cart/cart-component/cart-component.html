@@ -1,9 +1,9 @@
-<p>cart-component works!</p>
+<!-- <p>cart-component works!</p> -->
 
 
-<h2> 🛒Shopping Cart</h2>
-
-<div *ngIf="cartItems$ | async as items" class="cart-container">
+<!-- <h2> 🛒Shopping Cart</h2> -->
+<div *ngIf="false">
+  <div *ngIf="cartItems$ | async as items" class="cart-container">
 
   <div class="cart-left">
     <div *ngFor="let item of items">
@@ -59,3 +59,39 @@
   </div>
 
 </div>
+</div>
+
+
+
+<main>
+  <p>YOUR CART</p>
+  <h1>Shopping Cart</h1>
+
+  <ng-container *ngIf="cartItems$ | async as items">
+    <div *ngIf="items.length else empty">
+      <div>
+        <app-cart-item-component
+          *ngFor="let item of items"
+          [item]="item"
+          (quantityChanged)="updateQty(item.product.id, $event)"
+          (removed)="removeItem(item.product.id)"
+        >
+      </app-cart-item-component>
+      </div>
+
+      <aside>
+
+      </aside>
+
+    </div>
+    
+  </ng-container>
+
+  <ng-template #empty>
+    <div>
+      <h2>Your cart is waiting.</h2>
+      <p>Explore the collection and bring something good home.</p>
+      <a class="btn btn-dark" routerLink="/">Browse products</a>
+    </div>
+  </ng-template>
+</main>

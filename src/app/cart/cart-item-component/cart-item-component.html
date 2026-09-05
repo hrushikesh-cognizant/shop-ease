@@ -39,15 +39,16 @@
   </div>
 
   <input
+    name="quantity"
     class = "form-control form-control-sm qty"
     min="1"
-    max="item.product.quantity"
+    [max]="item.product.quantity"
     type="number"
     [value]="item.quantity"
     (change)="quantityChanged.emit(+$any($event.target).value)"
   />
 
-  <strong>{{item.product.price * item.quantity | currency:'INR'}}</strong>
+  <strong> {{item.product.price * item.quantity | currency:'INR'}} </strong>
 
   <button 
     class="btn btn-link text-secondary p-0"

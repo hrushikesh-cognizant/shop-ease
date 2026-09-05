@@ -18,14 +18,14 @@ import { Router } from '@angular/router';
 
 export class CartComponent implements OnInit {
 
-  //cartItems$!: Observable<CartItem[]>;
-  totalAmount = 0;
   cartItems$!: Observable<CartItem[]>;
+  totalAmount = 0;
+  
 
   constructor(
     private cartService: CartService, 
     private authService: AuthService, 
-    private router: Router) { }
+    private router: Router) {}
 
 
   totalItems = 0;
@@ -48,6 +48,7 @@ export class CartComponent implements OnInit {
       );
 
     });
+
 
   }
 
