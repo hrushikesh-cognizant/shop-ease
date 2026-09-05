@@ -15,19 +15,28 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
 
-  {path: 'checkout',component: CheckoutComponent},
-  {path: 'checkout/summary',component: OrderSummaryComponent},
+  // { path: 'checkout', component: CheckoutComponent },
+  // { path: 'checkout/summary', component: OrderSummaryComponent },
 
-  {path:'', component:ProductList},
+  {
+    path: 'checkout', children: [
+      { path: '', component: CheckoutComponent },
+      { path: 'summary', component: OrderSummaryComponent }
+    ],
+  },
+
+  { path: '', component: ProductList },
 
   { path: 'cart', component: CartComponent },
-    // , canActivate: [authGuard] 
-   { path: 'cartitem', component: CartItemComponent },
-  { path: '**', redirectTo: ''}
+  // , canActivate: [authGuard]
+  // { path: 'cartitem', component: CartItemComponent },
+  { path: '**', redirectTo: '' },
+
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }
