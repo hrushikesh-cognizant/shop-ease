@@ -5,94 +5,89 @@
 <div *ngIf="false">
   <div *ngIf="cartItems$ | async as items" class="cart-container">
 
-  <div class="cart-left">
-    <div *ngFor="let item of items">
-      <app-cart-item-component
-        [item]="item">
-      </app-cart-item-component>
+    <div class="cart-left">
+      <div *ngFor="let item of items">
+        <app-cart-item-component [item]="item">
+        </app-cart-item-component>
+      </div>
     </div>
-  </div>
 
-  <div class="cart-right">
-    <!-- <app-order-summary-component
+    <div class="cart-right">
+      <!-- <app-order-summary-component
       [cartItems]="items">
     </app-order-summary-component> -->
 
-    <div class="summary-card">
+      <div class="summary-card">
 
-  <h2>Order Summary</h2>
+        <h2>Order Summary</h2>
 
-  <div class="summary-row">
-    <span>Total Items</span>
-    <span>{{ totalItems }}</span>
-  </div>
+        <div class="summary-row">
+          <span>Total Items</span>
+          <span>{{ totalItems }}</span>
+        </div>
 
-  <div class="summary-row">
-    <span>Subtotal</span>
-    <span>
-      {{ subtotal | currency:'INR':'symbol':'1.0-0' }}
-    </span>
-  </div>
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span>
+            {{ subtotal | currency:'INR':'symbol':'1.0-0' }}
+          </span>
+        </div>
 
-  <div class="summary-row">
-    <span>Delivery</span>
-    <span>
-      {{ getDeliveryCharge() | currency:'INR':'symbol':'1.0-0' }}
-    </span>
-  </div>
+        <div class="summary-row">
+          <span>Delivery</span>
+          <span>
+            {{ getDeliveryCharge() | currency:'INR':'symbol':'1.0-0' }}
+          </span>
+        </div>
 
-  <hr>
+        <hr>
 
-  <div class="summary-row total">
-    <span>Grand Total</span>
-    <span>
-      {{ getGrandTotal() | currency:'INR':'symbol':'1.0-0' }}
-    </span>
-  </div>
+        <div class="summary-row total">
+          <span>Grand Total</span>
+          <span>
+            {{ getGrandTotal() | currency:'INR':'symbol':'1.0-0' }}
+          </span>
+        </div>
 
-  <button class="checkout-btn" (click)="checkOut()">
-    Proceed to Checkout
-  </button>
+        <button class="checkout-btn" (click)="checkOut()">
+          Proceed to Checkout
+        </button>
 
-</div>
-
-  </div>
-
-</div>
-</div>
-
-
-
-<main>
-  <p>YOUR CART</p>
-  <h1>Shopping Cart</h1>
-
-  <ng-container *ngIf="cartItems$ | async as items">
-    <div *ngIf="items.length else empty">
-      <div>
-        <app-cart-item-component
-          *ngFor="let item of items"
-          [item]="item"
-          (quantityChanged)="updateQty(item.product.id, $event)"
-          (removed)="removeItem(item.product.id)"
-        >
-      </app-cart-item-component>
       </div>
 
-      <aside>
+    </div>
+
+  </div>
+</div>
+
+
+
+<main class="container-wide page">
+  <p class="eyebrow">YOUR CART</p>
+  <h1 class="page-title">🛒Shopping Cart</h1>
+
+  <ng-container *ngIf="cartItems$ | async as items">
+    <div *ngIf="items.length else empty" class="cart-layout">
+      <div>
+        <app-cart-item-component *ngFor="let item of items" [item]="item"
+          (quantityChanged)="updateQty(item.product.id, $event)" (removed)="removeItem(item.product.id)">
+        </app-cart-item-component>
+      </div>
+
+      <aside class="summary">
         <h2>Order Summary</h2>
-        <div>
+        <div class="d-flex justify-content-between">
           <span>Subtotal</span>
           <strong>{{getSubtotal() | currency:'INR'}}</strong>
         </div>
-        <div>
-          <span>Delivery</span>
-          <span>{{getDeliveryCharge() | currency:'INR'}}</span>
+        <div class="d-flex justify-content-between text-secondary">
+          <span >Delivery</span>
+          <span> {{ getDeliveryCharge() | currency:'INR'}}</span>
         </div>
-        <hr/>
+        <hr />
 
 
-        <div>
+        <div class="d-flex justify-content-between total">
           <span>Total</span>
           <strong>{{getGrandTotal() | currency:'INR'}}</strong>
         </div>
@@ -101,11 +96,11 @@
       </aside>
 
     </div>
-    
+
   </ng-container>
 
   <ng-template #empty>
-    <div>
+    <div class="empty">
       <h2>Your cart is waiting.</h2>
       <p>Explore the collection and bring something good home.</p>
       <a class="btn btn-dark" routerLink="/">Browse products</a>
