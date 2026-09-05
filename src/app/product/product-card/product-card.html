@@ -1,5 +1,5 @@
 <article class="product-card" [class.sold-out]="!product.quantity"]>
-    <a routerLink="['/products', product.id]" class="product-image">
+    <a [routerLink]="['/products', product.id]" class="product-image">
         <img [src]="product.image" [alt]="product.name"/>
         <span class="category">{{product.category}}</span>
     </a>
