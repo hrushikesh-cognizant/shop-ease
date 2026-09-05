@@ -74,6 +74,18 @@
       "email": "John.Adams@gmail.com",
       "password": "John@123",
       "id": "yprohi4Abhc"
+    },
+    {
+      "name": "John Rigsby",
+      "email": "John.R@gmail.com",
+      "password": "John@123",
+      "id": "6epsgi0qv38"
+    },
+    {
+      "name": "Jack Jones",
+      "email": "Jack.Jones@gmail.com",
+      "password": "Jack@123",
+      "id": "xGNS1pP6uok"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

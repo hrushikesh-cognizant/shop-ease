@@ -51,7 +51,7 @@ export class RegisterComponent {
         console.log('User Registered', response);
         alert('Registration Successful');
         this.registerForm.reset();
-        this.router.navigate(['/login']);
+        this.router.navigate(['/']);
       },
       error: (error) => {
         console.error('Registration Failed', error);
