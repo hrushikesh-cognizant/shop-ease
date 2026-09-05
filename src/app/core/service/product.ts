@@ -23,4 +23,8 @@ export class ProductService {
         return this.http.get<Product[]>(`${this.endpoint}?category=${category}`);
     }
 
+    addProduct(product: Omit<Product, 'id'>): Observable<Product>{
+        return this.http.post<Product>(this.endpoint, product);
+    }
+
 }
