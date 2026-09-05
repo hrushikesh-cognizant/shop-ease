@@ -18,12 +18,12 @@ const routes: Routes = [
   {path: 'checkout',component: CheckoutComponent},
   {path: 'checkout/summary',component: OrderSummaryComponent},
 
-  {path:'list', component:ProductList},
+  {path:'', component:ProductList},
 
   { path: 'cart', component: CartComponent },
     // , canActivate: [authGuard] 
    { path: 'cartitem', component: CartItemComponent },
-  { path: '', redirectTo: 'login', pathMatch: 'full' }
+  { path: '**', redirectTo: ''}
 ];
 
 @NgModule({

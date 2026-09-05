@@ -45,32 +45,39 @@ export class LoginComponent {
   errorMsg = '';
   authError = false;
 
-  onLogin(form: NgForm): void {
+  onLogin(value:{email:string, password:string}): void {
+    // console.log('OnLongin');
+
     this.authError=false;
 
-    if (form.valid) {
+    if (value.email && value.password) {
       this.authService.login(
-        this.loginData.email,
-        this.loginData.password
+        value.email,
+        value.password
       ).subscribe({
-        next: (users) => {
-          
-// console.log("Users>>>>>>>>>>>:"+ users)
-          if (users.length > 0) {
-            // console.log("Valid");
-            // console.log('Login Successful');
-            this.router.navigate(['/']);
-          } else {
-            this.authError = true;
-            this.errorMsg = 'Invalid Email or Password';
-           alert( this.errorMsg = 'Invalid Email or Password');
-          }
+        next: () => {
+          console.log('Login Successful');
+          this.router.navigate(['/']);
+          // console.log("Users>>>>>>>>>>>:"+ users)
+          // if (user) {
+          //   // console.log("Valid");
+          //   // console.log('Login Successful');
+          //   this.router.navigate(['/']);
+          // } else {
+          //   this.authError = true;
+          //   this.errorMsg = 'Invalid Email or Password';
+          //  alert( this.errorMsg = 'Invalid Email or Password');
+          // }
 
         },
         error: (err) => {
+          // console.log('Login error');
           // console.error(err);
           this.authError = true;
           this.errorMsg = 'Login failed';
+        },
+        complete: () => {
+          // console.log('Login request completed');
         }
       });
 

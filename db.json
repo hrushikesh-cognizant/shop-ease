@@ -68,6 +68,12 @@
       "email": "Alex.McDoodle@gmail.com",
       "password": "Alex@123",
       "id": "Z8AJ87tSddo"
+    },
+    {
+      "name": "John Adams",
+      "email": "John.Adams@gmail.com",
+      "password": "John@123",
+      "id": "yprohi4Abhc"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

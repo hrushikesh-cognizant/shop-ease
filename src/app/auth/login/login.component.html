@@ -3,7 +3,7 @@
     <p class="eyebrow" >WELCOME TO SHOPEASE</p>
     <h1>Good to see you again.</h1>
     <!-- #loginForm="ngForm" captures the entire form state -->
-    <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)" novalidate>
+    <form #loginForm="ngForm" (ngSubmit)=" loginForm.valid && onLogin(loginForm.value)" novalidate>
       
       <!-- Email Field -->
       <div class="form-group">

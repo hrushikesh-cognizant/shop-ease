@@ -46,7 +46,7 @@ export class RegisterComponent {
       password: this.registerForm.value.password
     };
 
-    this.authService.register(user).subscribe({
+    this.authService.register(user.name!, user.email!, user.password!).subscribe({
       next: (response) => {
         console.log('User Registered', response);
         alert('Registration Successful');
